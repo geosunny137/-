@@ -15,6 +15,17 @@ using std::ifstream;
 
 /* MD5 declaration. */
 class MD5 {
+public:
+    MD5();
+    MD5(const void* input, size_t length);
+    MD5(const string& str);
+    MD5(ifstream& in);
+    void update(const void* input, size_t length);
+    void update(const string& str);
+    void update(ifstream& in);
+    const byte* digest();
+    string toString();
+    void reset();
 
 };
 
